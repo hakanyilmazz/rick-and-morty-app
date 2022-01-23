@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="cartoonCharacter"
+            type="com.hakanyilmazz.rickandmorty.data.model.CartoonCharacter" />
+
+        <variable
+            name="viewModel"
+            type="com.hakanyilmazz.rickandmorty.ui.cartooncharacterdetail.CartoonCharacterDetailViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:context=".ui.cartooncharacterdetail.CartoonCharacterDetailFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/detail_characterImage"
+                android:layout_width="247dp"
+                android:layout_height="232dp"
+                android:layout_marginTop="32dp"
+                android:contentDescription="@string/character_image"
+                android:downloadUrl="@{cartoonCharacter.image}"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/detail_characterName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:text="@{@string/name_formatted(cartoonCharacter.name)}"
+                android:textColor="@color/purple_500"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detail_characterImage" />
+
+            <TextView
+                android:id="@+id/detail_characterLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@{@string/location_formatted(cartoonCharacter.origin.name)}"
+                android:textColor="@color/purple_500"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/detail_characterName"
+                app:layout_constraintStart_toStartOf="@+id/detail_characterName"
+                app:layout_constraintTop_toBottomOf="@+id/detail_characterName" />
+
+            <TextView
+                android:id="@+id/detail_characterStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@{@string/status_formatted(cartoonCharacter.status)}"
+                android:textColor="@color/purple_500"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/detail_characterName"
+                app:layout_constraintStart_toStartOf="@+id/detail_characterName"
+                app:layout_constraintTop_toBottomOf="@+id/detail_characterLocation" />
+
+            <TextView
+                android:id="@+id/detail_characterSpecies"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@{@string/species_formatted(cartoonCharacter.species)}"
+                android:textColor="@color/purple_500"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/detail_characterName"
+                app:layout_constraintStart_toStartOf="@+id/detail_characterName"
+                app:layout_constraintTop_toBottomOf="@+id/detail_characterStatus" />
+
+            <TextView
+                android:id="@+id/detail_characterGender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@{@string/gender_formatted(cartoonCharacter.gender)}"
+                android:textColor="@color/purple_500"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/detail_characterName"
+                app:layout_constraintStart_toStartOf="@+id/detail_characterName"
+                app:layout_constraintTop_toBottomOf="@+id/detail_characterSpecies" />
+
+            <TextView
+                android:id="@+id/detail_characterCreated"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@{@string/created_formatted(viewModel.getFormattedDate(cartoonCharacter.created))}"
+                android:textColor="@color/purple_500"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/detail_characterName"
+                app:layout_constraintStart_toStartOf="@+id/detail_characterName"
+                app:layout_constraintTop_toBottomOf="@+id/detail_characterGender" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

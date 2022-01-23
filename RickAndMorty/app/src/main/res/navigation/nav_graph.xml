@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/cartoonCharacterFragment">
+
+    <fragment
+        android:id="@+id/cartoonCharacterFragment"
+        android:name="com.hakanyilmazz.rickandmorty.ui.cartooncharacter.CartoonCharacterFragment"
+        android:label="Characters" >
+        <action
+            android:id="@+id/action_cartoonCharacterFragment_to_cartoonCharacterDetailFragment"
+            app:destination="@id/cartoonCharacterDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartoonCharacterDetailFragment"
+        android:name="com.hakanyilmazz.rickandmorty.ui.cartooncharacterdetail.CartoonCharacterDetailFragment"
+        android:label="Detail" >
+        <action
+            android:id="@+id/action_cartoonCharacterDetailFragment_to_cartoonCharacterFragment"
+            app:destination="@id/cartoonCharacterFragment" />
+        <argument
+            android:name="argCartoonCharacter"
+            app:argType="com.hakanyilmazz.rickandmorty.data.model.CartoonCharacter"
+            app:nullable="true" />
+    </fragment>
+</navigation>

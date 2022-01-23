@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/_MyDesktop/Other/Coding/AndroidCourse/RickAndMorty/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/_MyDesktop/Other/Coding/AndroidCourse/RickAndMorty/app/src/main/res/layout/cartoon_character_list_row.xml" value="0.33" />
+        <entry key="..\:/_MyDesktop/Other/Coding/AndroidCourse/RickAndMorty/app/src/main/res/layout/fragment_cartoon_character.xml" value="0.2957427536231884" />
+        <entry key="..\:/_MyDesktop/Other/Coding/AndroidCourse/RickAndMorty/app/src/main/res/layout/fragment_cartoon_character_detail.xml" value="0.2957427536231884" />
+        <entry key="..\:/_MyDesktop/Other/Coding/AndroidCourse/RickAndMorty/app/src/main/res/menu/update_menu.xml" value="0.3625" />
+        <entry key="..\:/_MyDesktop/Other/Coding/AndroidCourse/RickAndMorty/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.21875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
