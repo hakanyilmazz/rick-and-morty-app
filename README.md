@@ -15,3 +15,6 @@
 
 ### - [Rick And Morty Api](https://rickandmortyapi.com/)
 ### - [Mad Score](https://madscorecard.withgoogle.com/scorecards/1415922638/)
+
+## Screenshots
+<img src="https://raw.githubusercontent.com/hakanyilmazz/rick-and-morty-app/main/ss.png" height="500"></br>
