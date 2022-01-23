@@ -9,4 +9,6 @@
     <string name="gender_formatted">Gender: %s</string>
     <string name="created_formatted">Created at: %s</string>
     <string name="character_image">Character Image</string>
+    <string name="go_to_next_button">Go to Next Button</string>
+    <string name="go_to_back_button">Go to Back Button</string>
 </resources>

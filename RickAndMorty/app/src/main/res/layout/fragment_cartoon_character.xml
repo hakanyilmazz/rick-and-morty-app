@@ -47,15 +47,16 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="16dp"
-            android:backgroundTint="@color/purple_500"
+            android:backgroundTint="@color/primary_variant_color"
             android:clickable="true"
             android:focusable="true"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/recycler_view"
+            app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/floatingActionButtonBack"
             app:srcCompat="@drawable/ic_baseline_navigate_next_24"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            android:contentDescription="@string/go_to_next_button" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButtonBack"
@@ -63,15 +64,16 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="16dp"
-            android:backgroundTint="@color/purple_500"
+            android:backgroundTint="@color/primary_variant_color"
             android:clickable="true"
             android:focusable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/floatingActionButtonNext"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toEndOf="@+id/recycler_view"
+            app:layout_constraintStart_toEndOf="parent"
             app:srcCompat="@drawable/ic_baseline_keyboard_arrow_left_24"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            android:contentDescription="@string/go_to_back_button" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
