@@ -1,5 +1,6 @@
 package com.hakanyilmazz.rickandmorty.di.competition
 
+import com.hakanyilmazz.rickandmorty.domain.usecase.UpdateCartoonCharacterUseCase
 import com.hakanyilmazz.rickandmorty.ui.competition.CompetitionViewModelFactory
 import dagger.Module
 import dagger.Provides
@@ -8,7 +9,9 @@ import dagger.Provides
 class CompetitionModule {
     @CompetitionScope
     @Provides
-    fun provideCompetitionViewModelFactory(): CompetitionViewModelFactory {
-        return CompetitionViewModelFactory()
+    fun provideCompetitionViewModelFactory(
+        updateCartoonCharacterUseCase: UpdateCartoonCharacterUseCase
+    ): CompetitionViewModelFactory {
+        return CompetitionViewModelFactory(updateCartoonCharacterUseCase)
     }
 }
