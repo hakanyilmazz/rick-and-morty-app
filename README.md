@@ -11,7 +11,6 @@
 - Data Binding
 - Kotlin extensions
 - Binding adapters
-- Truth library for unit testing*
 
 ### - [Rick And Morty Api](https://rickandmortyapi.com/)
 ### - [MAD Score](https://madscorecard.withgoogle.com/scorecards/4052073336/)
