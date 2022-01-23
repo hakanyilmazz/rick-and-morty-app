@@ -1,4 +1,4 @@
-## Android - Using Rick And Morty Api
+## Android - Rick And Morty App
 
 - MVVM architecture
 - Dependency Injection
@@ -11,3 +11,5 @@
 - Data Binding
 - Kotlin extensions
 - Truth library for unit testing*
+
+### - [Rick And Morty Api](https://rickandmortyapi.com/)
