@@ -10,6 +10,7 @@
 - Navigation
 - Data Binding
 - Kotlin extensions
+- Binding adapters
 - Truth library for unit testing*
 
 ### - [Rick And Morty Api](https://rickandmortyapi.com/)
