@@ -14,7 +14,7 @@
 - Truth library for unit testing*
 
 ### - [Rick And Morty Api](https://rickandmortyapi.com/)
-### - [Mad Score](https://madscorecard.withgoogle.com/scorecards/1415922638/)
+### - [MAD Score](https://madscorecard.withgoogle.com/scorecards/4052073336/)
 
 ## Screenshots
 <img src="https://raw.githubusercontent.com/hakanyilmazz/rick-and-morty-app/main/ss.png" height="500"></br>
