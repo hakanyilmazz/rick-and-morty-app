@@ -1,7 +1,7 @@
 ## Android - Rick And Morty App
 
 - MVVM architecture
-- Dependency Injection
+- Dependency Injection (Dagger)
 - Retrofit
 - Room
 - Kotlin coroutines
