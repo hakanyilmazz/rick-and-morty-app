@@ -1,1 +1,1 @@
-# rick-and-morty-app
+# Android - Using Rick And Morty Api
