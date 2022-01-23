@@ -65,6 +65,11 @@ class CartoonCharacterFragment :
             R.id.ac_update -> {
                 displayCartoonCharacters(false)
             }
+            R.id.ac_competition -> {
+                val action =
+                    CartoonCharacterFragmentDirections.actionCartoonCharacterFragmentToCompetitionFragment()
+                Navigation.findNavController(requireView()).navigate(action)
+            }
         }
 
         return super.onOptionsItemSelected(item)

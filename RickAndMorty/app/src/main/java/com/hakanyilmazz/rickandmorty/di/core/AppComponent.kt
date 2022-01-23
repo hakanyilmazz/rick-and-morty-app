@@ -2,6 +2,7 @@ package com.hakanyilmazz.rickandmorty.di.core
 
 import com.hakanyilmazz.rickandmorty.di.cartooncharacter.CartoonCharacterDetailSubcomponent
 import com.hakanyilmazz.rickandmorty.di.cartooncharacter.CartoonCharacterSubComponent
+import com.hakanyilmazz.rickandmorty.di.competition.CompetitionSubcomponent
 import dagger.Component
 import javax.inject.Singleton
 
@@ -21,4 +22,5 @@ import javax.inject.Singleton
 interface AppComponent {
     fun cartoonCharacterSubcomponent(): CartoonCharacterSubComponent.Factory
     fun cartoonCharacterDetailSubcomponent(): CartoonCharacterDetailSubcomponent.Factory
+    fun competitionSubcomponent(): CompetitionSubcomponent.Factory
 }

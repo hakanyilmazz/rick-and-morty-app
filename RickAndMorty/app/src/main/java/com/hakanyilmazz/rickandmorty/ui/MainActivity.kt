@@ -40,7 +40,8 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.cartoonCharacterFragment,
-                R.id.cartoonCharacterDetailFragment
+                R.id.cartoonCharacterDetailFragment,
+                R.id.competitionFragment
             )
         )
 
@@ -52,6 +53,9 @@ class MainActivity : AppCompatActivity() {
                     supportActionBar?.setDisplayHomeAsUpEnabled(false)
                 }
                 R.id.cartoonCharacterDetailFragment -> {
+                    supportActionBar?.setDisplayHomeAsUpEnabled(true)
+                }
+                R.id.competitionFragment -> {
                     supportActionBar?.setDisplayHomeAsUpEnabled(true)
                 }
             }

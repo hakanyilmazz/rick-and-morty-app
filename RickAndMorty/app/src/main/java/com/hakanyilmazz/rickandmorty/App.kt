@@ -4,6 +4,7 @@ import android.app.Application
 import com.hakanyilmazz.rickandmorty.di.Injector
 import com.hakanyilmazz.rickandmorty.di.cartooncharacter.CartoonCharacterDetailSubcomponent
 import com.hakanyilmazz.rickandmorty.di.cartooncharacter.CartoonCharacterSubComponent
+import com.hakanyilmazz.rickandmorty.di.competition.CompetitionSubcomponent
 import com.hakanyilmazz.rickandmorty.di.core.AppComponent
 import com.hakanyilmazz.rickandmorty.di.core.AppModule
 import com.hakanyilmazz.rickandmorty.di.core.DaggerAppComponent
@@ -28,5 +29,9 @@ class App : Application(), Injector {
 
     override fun createCartoonCharacterDetailSubcomponent(): CartoonCharacterDetailSubcomponent {
         return appComponent.cartoonCharacterDetailSubcomponent().create()
+    }
+
+    override fun createCompetitionSubcomponent(): CompetitionSubcomponent {
+        return appComponent.competitionSubcomponent().create()
     }
 }
