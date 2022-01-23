@@ -1,7 +1,7 @@
 ## Android - Rick And Morty App
 
 - MVVM architecture
-- Dependency Injection
+- Dependency Injection (Dagger)
 - Retrofit
 - Room
 - Kotlin coroutines
@@ -10,6 +10,8 @@
 - Navigation
 - Data Binding
 - Kotlin extensions
+- Binding adapters
 - Truth library for unit testing*
 
 ### - [Rick And Morty Api](https://rickandmortyapi.com/)
+### - [Mad Score](https://madscorecard.withgoogle.com/scorecards/1415922638/)
