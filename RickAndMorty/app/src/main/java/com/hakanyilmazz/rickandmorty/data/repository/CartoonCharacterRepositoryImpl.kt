@@ -31,9 +31,8 @@ class CartoonCharacterRepositoryImpl(
             val response = cartoonCharacterRemoteDataSource.getCartoonCharactersFromApi(page)
             val body = response.body()
 
-            body?.let {
-                cartoonCharacterList = it.cartoonCharacters
-            }
+            cartoonCharacterList = body?.cartoonCharacters ?: listOf()
+
         } catch (exception: Exception) {
             Log.e("ERROR", exception.message.toString())
         }

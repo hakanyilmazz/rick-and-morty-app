@@ -11,7 +11,7 @@ class CartoonCharacterViewModel(
     private val updateCartoonCharacterUseCase: UpdateCartoonCharacterUseCase
 ) : ViewModel() {
 
-    private var page = MutableLiveData(0)
+    val page = MutableLiveData(0)
     val dataLoading = MutableLiveData(true)
 
     fun getCartoonCharacters() = liveData {

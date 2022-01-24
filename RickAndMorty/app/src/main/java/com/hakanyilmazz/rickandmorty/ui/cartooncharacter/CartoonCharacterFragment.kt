@@ -53,6 +53,14 @@ class CartoonCharacterFragment :
         binding?.floatingActionButtonBack?.setOnClickListener {
             displayCartoonCharactersBack()
         }
+
+        viewModel?.let {
+            it.page.observe(viewLifecycleOwner) { pageValue ->
+                if (pageValue > 42) {
+                    it.page.value = 42
+                }
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
