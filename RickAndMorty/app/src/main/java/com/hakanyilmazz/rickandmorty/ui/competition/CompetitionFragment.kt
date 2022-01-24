@@ -41,6 +41,8 @@ class CompetitionFragment :
                 it.optionC
             )
 
+            setButtonColorsDefault()
+
             it.checkButton.setOnClickListener { _ ->
                 viewModel?.getCartoonCharacters()?.observe(viewLifecycleOwner) {
                     setButtonColorsDefault()
