@@ -11,6 +11,10 @@
 - Data Binding
 - Kotlin extensions
 - Binding adapters
+- Testing
+    - Mockito
+    - Truth
+    - JUnit
 
 ### - [Rick And Morty Api](https://rickandmortyapi.com/)
 ### - [MAD Score](https://madscorecard.withgoogle.com/scorecards/4052073336/)
