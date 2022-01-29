@@ -1,8 +1,5 @@
 plugins {
-    id("com.android.application")
-    id("kotlin-android")
-    id("kotlin-kapt")
-    id("androidx.navigation.safeargs.kotlin")
+    Util.toList(Plugins::class).forEach { id(it) }
 }
 
 android {
