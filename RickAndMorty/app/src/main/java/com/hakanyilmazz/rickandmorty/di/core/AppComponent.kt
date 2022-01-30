@@ -1,7 +1,7 @@
 package com.hakanyilmazz.rickandmorty.di.core
 
-import com.hakanyilmazz.rickandmorty.di.cartooncharacter.CartoonCharacterDetailSubcomponent
 import com.hakanyilmazz.rickandmorty.di.cartooncharacter.CartoonCharacterSubComponent
+import com.hakanyilmazz.rickandmorty.di.cartooncharacterdetail.CartoonCharacterDetailSubcomponent
 import com.hakanyilmazz.rickandmorty.di.competition.CompetitionSubcomponent
 import dagger.Component
 import javax.inject.Singleton

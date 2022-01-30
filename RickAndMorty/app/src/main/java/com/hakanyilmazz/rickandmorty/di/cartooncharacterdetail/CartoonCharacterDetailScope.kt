@@ -1,4 +1,4 @@
-package com.hakanyilmazz.rickandmorty.di.cartooncharacter
+package com.hakanyilmazz.rickandmorty.di.cartooncharacterdetail
 
 import javax.inject.Scope
 
