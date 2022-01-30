@@ -52,10 +52,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.cartoonCharacterFragment -> {
                     supportActionBar?.setDisplayHomeAsUpEnabled(false)
                 }
-                R.id.cartoonCharacterDetailFragment -> {
-                    supportActionBar?.setDisplayHomeAsUpEnabled(true)
-                }
-                R.id.competitionFragment -> {
+                else -> {
                     supportActionBar?.setDisplayHomeAsUpEnabled(true)
                 }
             }
