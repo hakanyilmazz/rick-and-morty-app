@@ -42,4 +42,9 @@ class CartoonCharacterViewModel(
     fun currentPage(): Int {
         return page.value!!
     }
+
+    fun reset() {
+        page.value = page.value?.dec()
+        getBack()
+    }
 }

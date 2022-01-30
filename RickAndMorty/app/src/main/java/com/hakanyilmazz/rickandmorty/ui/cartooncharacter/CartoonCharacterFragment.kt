@@ -25,9 +25,7 @@ class CartoonCharacterFragment :
 
     @Inject
     lateinit var factory: CartoonCharacterViewModelFactory
-
     private lateinit var adapter: CartoonCharacterAdapter
-    private var isFirstOpening = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -95,14 +93,18 @@ class CartoonCharacterFragment :
             }
 
             it.recyclerView.adapter = adapter
-            displayCartoonCharacters(isFirstOpening)
-            isFirstOpening = false
+            displayCartoonCharacters(true)
         }
     }
 
-    private fun displayCartoonCharacters(next: Boolean) {
+    override fun onPause() {
+        super.onPause()
+        viewModel?.reset()
+    }
+
+    private fun displayCartoonCharacters(update: Boolean) {
         viewModel?.let {
-            val responseLiveData = if (next) {
+            val responseLiveData = if (update) {
                 it.updateCartoonCharacters()
             } else {
                 it.getCartoonCharacters()
