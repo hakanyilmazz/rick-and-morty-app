@@ -17,7 +17,7 @@
     - JUnit
 
 ### - [Rick And Morty Api](https://rickandmortyapi.com/)
-### - [MAD Score](https://madscorecard.withgoogle.com/scorecards/4052073336/)
+### - [MAD Score](https://madscorecard.withgoogle.com/scorecards/721914447/)
 
 ## Screenshots
 <img src="https://raw.githubusercontent.com/hakanyilmazz/rick-and-morty-app/main/ss.png" height="500"></br>
