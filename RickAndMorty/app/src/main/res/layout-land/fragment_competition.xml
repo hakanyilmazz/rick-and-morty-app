@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.hakanyilmazz.rickandmorty.ui.competition.CompetitionViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.competition.CompetitionFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/competition_character_image"
+                android:layout_width="247dp"
+                android:layout_height="232dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@string/character_image"
+                android:downloadUrl="@{viewModel.answer.image}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/score_text"
+                tools:src="@tools:sample/avatars" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/option_a"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/competition_character_image"
+                app:layout_constraintTop_toTopOf="@+id/competition_character_image"
+                tools:text="Option-A" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/option_b"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="@+id/option_a"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="@+id/option_a"
+                app:layout_constraintTop_toBottomOf="@+id/option_a"
+                tools:text="Option-B" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/option_c"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="@+id/option_a"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="@+id/option_b"
+                app:layout_constraintTop_toBottomOf="@+id/option_b"
+                tools:text="Option-C" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/check_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:text="@string/check"
+                app:layout_constraintBottom_toBottomOf="@+id/competition_character_image"
+                app:layout_constraintEnd_toEndOf="@+id/option_c"
+                app:layout_constraintStart_toStartOf="@+id/option_c"
+                app:layout_constraintTop_toBottomOf="@+id/option_c" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/score_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/basic"
+                android:text="@{@string/score_formatted(viewModel.score)}"
+                android:textAlignment="center"
+                android:textColor="@color/primary_variant_color"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Score: 100" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
