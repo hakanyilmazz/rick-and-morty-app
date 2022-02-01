@@ -18,7 +18,7 @@ class CartoonCharacterAdapter(private val onClick: (cartoonCharacter: CartoonCha
             oldItem: CartoonCharacter,
             newItem: CartoonCharacter
         ): Boolean {
-            return oldItem == newItem
+            return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(
