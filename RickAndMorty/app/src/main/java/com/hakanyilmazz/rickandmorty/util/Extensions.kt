@@ -13,7 +13,7 @@ import com.hakanyilmazz.rickandmorty.R
 fun ImageView.downloadFromUrl(url: String?, progressDrawable: CircularProgressDrawable) {
     val options = RequestOptions()
         .placeholder(progressDrawable)
-        .error(R.mipmap.ic_launcher_round)
+        .error(R.drawable.ic_baseline_report_problem_24)
 
     Glide.with(context)
         .setDefaultRequestOptions(options)
