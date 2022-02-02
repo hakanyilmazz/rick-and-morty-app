@@ -10,7 +10,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import com.hakanyilmazz.rickandmorty.R
 import com.hakanyilmazz.rickandmorty.adapter.CartoonCharacterAdapter
 import com.hakanyilmazz.rickandmorty.data.model.CartoonCharacter
@@ -43,6 +46,7 @@ class CartoonCharacterFragment :
         super.onViewCreated(view, savedInstanceState)
 
         initRecyclerView()
+        addTouchHelperToRecyclerView()
 
         binding?.floatingActionButtonNext?.setOnClickListener {
             displayCartoonCharacters(true)
@@ -58,6 +62,44 @@ class CartoonCharacterFragment :
                     it.page.value = 42
                 }
             }
+        }
+    }
+
+    private fun addTouchHelperToRecyclerView() {
+        val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(
+            ItemTouchHelper.UP or ItemTouchHelper.DOWN,
+            ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
+        ) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                return true
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val position = viewHolder.adapterPosition
+                val cartoonCharacter = adapter.getItemAt(position)
+                adapter.removeAt(position)
+
+                view?.let {
+                    Snackbar.make(
+                        it,
+                        getString(R.string.item_removed_message),
+                        Snackbar.LENGTH_LONG
+                    ).apply {
+                        setAction(R.string.undo) {
+                            adapter.undo(cartoonCharacter, position)
+                        }
+                        show()
+                    }
+                }
+            }
+        }
+
+        ItemTouchHelper(itemTouchHelperCallback).apply {
+            attachToRecyclerView(binding?.recyclerView)
         }
     }
 
@@ -99,15 +141,15 @@ class CartoonCharacterFragment :
 
     override fun onPause() {
         super.onPause()
-        viewModel?.reset()
+        viewModel?.reset(requireContext())
     }
 
     private fun displayCartoonCharacters(update: Boolean) {
         viewModel?.let {
             val responseLiveData = if (update) {
-                it.updateCartoonCharacters()
+                it.updateCartoonCharacters(requireContext())
             } else {
-                it.getCartoonCharacters()
+                it.getCartoonCharacters(requireContext())
             }
 
             observeData(responseLiveData)
@@ -116,7 +158,7 @@ class CartoonCharacterFragment :
 
     private fun displayCartoonCharactersBack() {
         viewModel?.let {
-            val responseLiveData = it.getBack()
+            val responseLiveData = it.getBack(requireContext())
             observeData(responseLiveData)
         }
     }
@@ -125,12 +167,12 @@ class CartoonCharacterFragment :
         responseLiveData.observe(viewLifecycleOwner) { listOfCartoonCharacters ->
             if (!listOfCartoonCharacters.isNullOrEmpty()) {
                 (requireActivity() as AppCompatActivity).supportActionBar?.title =
-                    "Characters ${viewModel?.currentPage()}"
+                    getString(R.string.characters_formatted, viewModel?.currentPage())
 
                 adapter.setList(listOfCartoonCharacters)
                 binding?.recyclerView?.layoutManager?.scrollToPosition(0)
             } else {
-                Toast.makeText(context, "No data available", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, getString(R.string.no_data_found), Toast.LENGTH_LONG).show()
             }
         }
     }

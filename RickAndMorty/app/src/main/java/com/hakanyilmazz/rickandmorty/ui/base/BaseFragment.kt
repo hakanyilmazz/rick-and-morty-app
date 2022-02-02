@@ -9,7 +9,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
+import com.google.android.material.snackbar.Snackbar
+import com.hakanyilmazz.rickandmorty.R
 import com.hakanyilmazz.rickandmorty.di.Injector
+import com.hakanyilmazz.rickandmorty.util.Network
 
 abstract class BaseFragment<B : ViewDataBinding, V : ViewModel>(
     @LayoutRes private val layoutIdRes: Int
@@ -37,6 +40,19 @@ abstract class BaseFragment<B : ViewDataBinding, V : ViewModel>(
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if (!Network.isNetworkAvailable(requireContext().applicationContext)) {
+            binding?.root?.let {
+                Snackbar.make(
+                    it,
+                    getString(R.string.please_connect_to_network),
+                    Snackbar.LENGTH_LONG
+                ).show()
+            }
+        }
     }
 
     fun initViewModel(viewModel: V) {

@@ -70,4 +70,20 @@ class CartoonCharacterAdapter(private val onClick: (cartoonCharacter: CartoonCha
     fun setList(cartoonCharacterList: List<CartoonCharacter>) {
         this.cartoonCharacterList = cartoonCharacterList
     }
+
+    fun getItemAt(position: Int): CartoonCharacter {
+        return cartoonCharacterList[position]
+    }
+
+    fun removeAt(position: Int) {
+        val tempList = ArrayList(cartoonCharacterList)
+        tempList.removeAt(position)
+        cartoonCharacterList = tempList
+    }
+
+    fun undo(cartoonCharacter: CartoonCharacter, position: Int) {
+        val tempList = ArrayList(cartoonCharacterList)
+        tempList.add(position, cartoonCharacter)
+        cartoonCharacterList = tempList
+    }
 }

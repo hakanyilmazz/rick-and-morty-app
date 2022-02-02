@@ -25,7 +25,7 @@ class CartoonCharacterRepositoryImpl(
     }
 
     private suspend fun getCartoonCharactersFromApi(page: Int): List<CartoonCharacter> {
-        lateinit var cartoonCharacterList: List<CartoonCharacter>
+        var cartoonCharacterList: List<CartoonCharacter> = listOf()
 
         try {
             val response = cartoonCharacterRemoteDataSource.getCartoonCharactersFromApi(page)

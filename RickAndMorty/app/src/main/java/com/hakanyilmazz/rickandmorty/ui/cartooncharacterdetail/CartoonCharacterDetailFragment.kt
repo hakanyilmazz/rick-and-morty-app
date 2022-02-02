@@ -39,7 +39,7 @@ class CartoonCharacterDetailFragment :
             if (cartoonCharacterFromArg != null) {
                 binding?.let {
                     (requireActivity() as AppCompatActivity).supportActionBar?.title =
-                        "Details of ${cartoonCharacterFromArg.name}"
+                        getString(R.string.details_of, cartoonCharacterFromArg.name)
 
                     it.cartoonCharacter = cartoonCharacterFromArg
                     it.viewModel = viewModel

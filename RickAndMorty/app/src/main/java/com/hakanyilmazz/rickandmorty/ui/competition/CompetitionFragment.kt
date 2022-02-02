@@ -9,6 +9,7 @@ import com.google.android.material.button.MaterialButton
 import com.hakanyilmazz.rickandmorty.R
 import com.hakanyilmazz.rickandmorty.databinding.FragmentCompetitionBinding
 import com.hakanyilmazz.rickandmorty.ui.base.BaseFragment
+import com.hakanyilmazz.rickandmorty.util.Network
 import java.util.*
 import javax.inject.Inject
 
@@ -32,28 +33,40 @@ class CompetitionFragment :
             ViewModelProvider(viewModelStore, factory)[CompetitionViewModel::class.java]
         )
 
-        binding?.let {
-            it.viewModel = this.viewModel
+        if (Network.isNetworkAvailable(requireContext())) {
+            binding?.let {
+                it.viewModel = this.viewModel
 
-            buttonList = arrayListOf(
-                it.optionA,
-                it.optionB,
-                it.optionC
-            )
+                buttonList = arrayListOf(
+                    it.optionA,
+                    it.optionB,
+                    it.optionC
+                )
 
-            setButtonColorsDefault()
+                setButtonColorsDefault()
 
-            it.checkButton.setOnClickListener { _ ->
-                viewModel?.getCartoonCharacters()?.observe(viewLifecycleOwner) {
-                    setButtonColorsDefault()
-                    setButtonTexts()
+                it.checkButton.setOnClickListener {
+                    viewModel?.getCartoonCharacters(requireContext())?.observe(viewLifecycleOwner) {
+                        setButtonColorsDefault()
+                        setButtonTexts()
+                        showButtons()
+                    }
+                }
+
+                viewModel?.getCartoonCharacters(requireContext())?.observe(viewLifecycleOwner) {
                     showButtons()
+                    setButtonTexts()
                 }
             }
+        } else {
+            binding?.let {
+                it.viewModel = this.viewModel
 
-            viewModel?.getCartoonCharacters()?.observe(viewLifecycleOwner) {
-                showButtons()
-                setButtonTexts()
+                it.scoreText.text = "0"
+                it.checkButton.isEnabled = false
+                it.optionA.isEnabled = false
+                it.optionB.isEnabled = false
+                it.optionC.isEnabled = false
             }
         }
     }
@@ -75,11 +88,11 @@ class CompetitionFragment :
         }
 
         val randomIndex = random.nextInt(buttonList.size)
-        buttonList[randomIndex].text = viewModel?.setAnswer()?.name
+        buttonList[randomIndex].text = viewModel?.setAnswer(requireContext())?.name
 
         for (i in 0 until buttonList.size) {
             if (i != randomIndex) {
-                buttonList[i].text = viewModel?.getRandomCharacter()?.name
+                buttonList[i].text = viewModel?.getRandomCharacter(requireContext())?.name
             }
         }
     }

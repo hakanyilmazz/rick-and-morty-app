@@ -8,8 +8,10 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.google.android.material.snackbar.Snackbar
 import com.hakanyilmazz.rickandmorty.R
 import com.hakanyilmazz.rickandmorty.databinding.ActivityMainBinding
+import com.hakanyilmazz.rickandmorty.util.Network
 
 class MainActivity : AppCompatActivity() {
     private var binding: ActivityMainBinding? = null
@@ -19,6 +21,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        if (!Network.isNetworkAvailable(applicationContext)) {
+            binding?.root?.let {
+                Snackbar.make(
+                    it,
+                    getString(R.string.please_connect_to_network),
+                    Snackbar.LENGTH_LONG
+                ).show()
+            }
+        }
 
         initToolbarNavigation()
     }
