@@ -13,6 +13,14 @@
     <string name="go_to_back_button">Go to Back Button</string>
     <string name="update">Update</string>
     <string name="competition">Competition</string>
-    <string name="check">CHECK</string>
+    <string name="next">NEXT</string>
     <string name="score_formatted">Score: %s</string>
+    <string name="item_removed_message">Item removed from list!</string>
+    <string name="undo">Undo</string>
+    <string name="characters">Characters</string>
+    <string name="characters_formatted">Characters-%d</string>
+    <string name="no_data_found">No data found</string>
+    <string name="details_of">Details of %s</string>
+    <string name="please_connect_to_network">Please connect to network and reopen this app!</string>
+    <string name="detail">Detail</string>
 </resources>

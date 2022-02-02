@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Rick Ve Morty</string>
+    <string name="name">İsim</string>
+    <string name="alive">Canlı</string>
+    <string name="name_formatted">İsim: %s</string>
+    <string name="location_formatted">Konum: %s</string>
+    <string name="status_formatted">Durum: %s</string>
+    <string name="species_formatted">Tür: %s</string>
+    <string name="gender_formatted">Cinsiyet: %s</string>
+    <string name="created_formatted">Oluşturulduğu Tarih: %s</string>
+    <string name="character_image">Karakter Görseli</string>
+    <string name="go_to_next_button">Bir sonrakine git butonu</string>
+    <string name="go_to_back_button">Bir öncekine git butonu</string>
+    <string name="update">Güncelle</string>
+    <string name="competition">Yarışma</string>
+    <string name="next">SONRAKİ</string>
+    <string name="score_formatted">Puan: %s</string>
+    <string name="item_removed_message">Eleman listeden kaldırıldı!</string>
+    <string name="undo">Geri Al</string>
+    <string name="characters">Karakterler</string>
+    <string name="characters_formatted">Karakterler-%d</string>
+    <string name="no_data_found">Veri bulunamadı</string>
+    <string name="details_of">%s Detayları</string>
+    <string name="please_connect_to_network">Lütfen ağa bağlanın ve bu uygulamayı tekrar açın!</string>
+    <string name="detail">Detay</string>
+</resources>
