@@ -74,7 +74,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="24dp"
-                android:text="@string/check"
+                android:text="@string/next"
                 app:layout_constraintBottom_toBottomOf="@+id/competition_character_image"
                 app:layout_constraintEnd_toEndOf="@+id/option_c"
                 app:layout_constraintStart_toStartOf="@+id/option_c"

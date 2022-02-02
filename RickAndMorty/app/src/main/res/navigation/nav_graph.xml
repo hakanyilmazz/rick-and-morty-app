@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/cartoonCharacterFragment"
         android:name="com.hakanyilmazz.rickandmorty.ui.cartooncharacter.CartoonCharacterFragment"
-        android:label="Characters">
+        android:label="@string/characters">
         <action
             android:id="@+id/action_cartoonCharacterFragment_to_cartoonCharacterDetailFragment"
             app:destination="@id/cartoonCharacterDetailFragment" />
@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/cartoonCharacterDetailFragment"
         android:name="com.hakanyilmazz.rickandmorty.ui.cartooncharacterdetail.CartoonCharacterDetailFragment"
-        android:label="Detail">
+        android:label="@string/detail">
         <action
             android:id="@+id/action_cartoonCharacterDetailFragment_to_cartoonCharacterFragment"
             app:destination="@id/cartoonCharacterFragment" />
@@ -30,7 +30,7 @@
     <fragment
         android:id="@+id/competitionFragment"
         android:name="com.hakanyilmazz.rickandmorty.ui.competition.CompetitionFragment"
-        android:label="Competition">
+        android:label="@string/competition">
         <action
             android:id="@+id/action_competitionFragment_to_cartoonCharacterFragment"
             app:destination="@id/cartoonCharacterFragment" />
