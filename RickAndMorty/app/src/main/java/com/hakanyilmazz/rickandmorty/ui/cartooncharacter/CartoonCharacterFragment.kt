@@ -88,12 +88,9 @@ class CartoonCharacterFragment :
                         it,
                         getString(R.string.item_removed_message),
                         Snackbar.LENGTH_LONG
-                    ).apply {
-                        setAction(R.string.undo) {
-                            adapter.undo(cartoonCharacter, position)
-                        }
-                        show()
-                    }
+                    ).setAction(R.string.undo) {
+                        adapter.undo(cartoonCharacter, position)
+                    }.show()
                 }
             }
         }
