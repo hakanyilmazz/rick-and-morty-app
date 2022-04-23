@@ -2,7 +2,7 @@ import kotlin.reflect.KClass
 import kotlin.reflect.full.declaredMemberProperties
 
 object Util {
-    fun <T : Any> toList(ofClass: KClass<T>): ArrayList<String> {
+    fun <T : Any> getVariablesOf(ofClass: KClass<T>): ArrayList<String> {
         val declaredMemberProperties = ofClass.declaredMemberProperties
         val list = arrayListOf<String>()
 
