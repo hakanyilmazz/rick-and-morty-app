@@ -2,6 +2,7 @@ package com.hakanyilmazz.rickandmorty.ui.cartooncharacter
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
 import com.google.common.truth.Truth
 import com.hakanyilmazz.rickandmorty.data.model.CartoonCharacter
 import com.hakanyilmazz.rickandmorty.data.model.Origin
@@ -61,7 +62,9 @@ class CartoonCharacterViewModelTest {
             )
         )
 
-        val currentList = viewModel.getCartoonCharacters().getOrAwaitValue()
+        val currentList =
+            viewModel.getCartoonCharacters(InstrumentationRegistry.getInstrumentation().targetContext)
+                .getOrAwaitValue()
 
         Truth.assertThat(currentList).isEqualTo(cartoonCharacterList)
     }
@@ -96,7 +99,9 @@ class CartoonCharacterViewModelTest {
             )
         )
 
-        val updatedList = viewModel.updateCartoonCharacters().getOrAwaitValue()
+        val updatedList =
+            viewModel.updateCartoonCharacters(InstrumentationRegistry.getInstrumentation().targetContext)
+                .getOrAwaitValue()
 
         Truth.assertThat(updatedList).isEqualTo(cartoonCharacterList)
     }
