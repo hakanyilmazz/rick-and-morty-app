@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        Util.toList(ClassPaths::class).forEach { classpath(it) }
+        Util.getVariablesOf(ClassPaths::class).forEach { classpath(it) }
     }
 }
 

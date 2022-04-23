@@ -1,5 +1,5 @@
 plugins {
-    Util.toList(Plugins::class).forEach { id(it) }
+    Util.getVariablesOf(Plugins::class).forEach { id(it) }
 }
 
 android {
@@ -33,12 +33,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "1.8"
     }
 
     buildFeatures {
@@ -47,8 +47,8 @@ android {
 }
 
 dependencies {
-    Util.toList(KaptLibs::class).forEach { kapt(it) }
-    Util.toList(Dependencies::class).forEach { implementation(it) }
-    Util.toList(TestDependencies::class).forEach { testImplementation(it) }
-    Util.toList(AndroidTestDependencies::class).forEach { androidTestImplementation(it) }
+    Util.getVariablesOf(KaptLibs::class).forEach { kapt(it) }
+    Util.getVariablesOf(Dependencies::class).forEach { implementation(it) }
+    Util.getVariablesOf(TestDependencies::class).forEach { testImplementation(it) }
+    Util.getVariablesOf(AndroidTestDependencies::class).forEach { androidTestImplementation(it) }
 }
