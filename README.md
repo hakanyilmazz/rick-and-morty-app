@@ -1,7 +1,7 @@
 ## Android - Rick And Morty App
 [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
 - MVVM architecture
-- Dependency Injection (Dagger)
+- Dependency Injection (Dagger 2)
 - Retrofit
 - Room
 - Kotlin coroutines
